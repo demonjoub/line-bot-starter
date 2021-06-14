@@ -9,9 +9,9 @@ import (
 )
 
 type Response struct {
-	Data    interface{} `json:"data",omitempty`
-	Message string      `json:"message, omitempty"`
-	Code    string      `json:"code, omitempty"`
+	Data    interface{} `json:"data,omitempty"`
+	Message string      `json:"message,omitempty"`
+	Code    string      `json:"code,omitempty"`
 }
 
 type ChatbotHandler struct {
