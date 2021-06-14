@@ -1,0 +1,10 @@
+environment: "dev"
+lineApi:
+  channelId: "1656081552"
+  channelSecret: "01bfa17ccd54622d115f598682d387a8"
+  userId: "U769cb3dc9fb9c84810befe58ac432ab4"
+  channelAccessToken: "6MTNG7rEmQYmBvLT2m7ghcRruytd51Xl8wYvFkIXN08mmJkUPxQlIPCXPtkZvtv5islUIyimlv3uM1Y3ylxVPDQPcAsn3334hLEVtohe9G9rltLnTzelCSxLfag+KPa0uqTxC6dyjNf0s/JHrf+1iQdB04t89/1O/w1cDnyilFU="
+app: 
+  port: 3000
+  name: "line chat bot"
+
