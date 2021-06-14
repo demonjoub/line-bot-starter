@@ -33,8 +33,9 @@ func main() {
 		})
 	})
 
+	bot := connectLineBot()
 	chatbotService := chatbot.NewChatbotService()
-	chatbotHandler := chatbot.NewChatbotHandler(chatbotService, connectLineBot())
+	chatbotHandler := chatbot.NewChatbotHandler(chatbotService, bot)
 	e.POST("/webhook", chatbotHandler.Webhook)
 
 	go run(e, port)

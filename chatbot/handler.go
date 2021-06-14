@@ -2,7 +2,6 @@ package chatbot
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -29,6 +28,7 @@ func (s *ChatbotHandler) Webhook(c echo.Context) error {
 	if ctx != nil {
 		ctx = context.Background()
 	}
+
 	events, err := s.Bot.ParseRequest(c.Request())
 	if err != nil {
 		if err == linebot.ErrInvalidSignature {
@@ -48,10 +48,13 @@ func (s *ChatbotHandler) Webhook(c echo.Context) error {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				fmt.Printf("%s", message.Text)
+				println(message.Text)
+				replyToken := event.ReplyToken
+				s.Service.replyMessage(message.Text, s.Bot, replyToken)
 			}
 		}
 	}
+
 	return c.JSON(http.StatusOK, Response{
 		Message: "OK",
 		Code:    "0",
